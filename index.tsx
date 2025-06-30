@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 const cvData = {
   name: "Tapasvi Dudhrejiya",
   title: "Technical Implementation Engineer",
@@ -304,10 +307,37 @@ const PricingPage = () => {
 }
 
 const ContactPage = () => {
+    // IMPORTANT: Replace this with your actual Google Apps Script Web App URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyWi-IYyQgZmD1RfjBNu98reWQu40B2I9C7pMff6FxBpAfw-RclRPDt1nNp8xjpSPX/exec';
+    
+    const [submissionStatus, setSubmissionStatus] = React.useState({
+        submitting: false,
+        status: null, // 'success', 'error'
+        message: ''
+    });
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Thank you for your message! This is a demo form. Please contact Tapasvi directly at ${cvData.contact.email}.`);
-        e.target.reset();
+        const form = e.target;
+        
+        setSubmissionStatus({ submitting: true, status: null, message: '' });
+
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.result === 'success') {
+                setSubmissionStatus({ submitting: false, status: 'success', message: 'Thank you! Your message has been sent.' });
+                form.reset();
+            } else {
+                throw new Error(data.error || 'An unknown error occurred.');
+            }
+        })
+        .catch(error => {
+            setSubmissionStatus({ submitting: false, status: 'error', message: `Oops! Something went wrong. ${error.message}` });
+        });
     };
 
     return (
@@ -317,20 +347,30 @@ const ContactPage = () => {
                 <div className="contact-container">
                     <div className="contact-form">
                         <h3>Send a Message</h3>
+                        <p style={{marginBottom: '15px', color: 'var(--text-light)', fontSize: '0.9rem'}}>
+                            Your message will be sent to my inbox and saved to a Google Sheet using Apps Script.
+                        </p>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <input type="text" placeholder="Your Name" required />
+                                <input type="text" name="name" placeholder="Your Name" required disabled={submissionStatus.submitting} />
                             </div>
                             <div className="form-group">
-                                <input type="email" placeholder="Your Email" required />
+                                <input type="email" name="email" placeholder="Your Email" required disabled={submissionStatus.submitting} />
                             </div>
                             <div className="form-group">
-                                <input type="text" placeholder="Subject" required />
+                                <input type="text" name="subject" placeholder="Subject" required disabled={submissionStatus.submitting} />
                             </div>
                             <div className="form-group">
-                                <textarea placeholder="Your Message" required></textarea>
+                                <textarea name="message" placeholder="Your Message" required disabled={submissionStatus.submitting}></textarea>
                             </div>
-                            <button type="submit" className="cta-btn">Send Message</button>
+                            <button type="submit" className="cta-btn" disabled={submissionStatus.submitting}>
+                                {submissionStatus.submitting ? 'Sending...' : 'Send Message'}
+                            </button>
+                            {submissionStatus.status && (
+                                <p className={`form-status ${submissionStatus.status}`}>
+                                    {submissionStatus.message}
+                                </p>
+                            )}
                         </form>
                     </div>
                     <div className="contact-details">
@@ -348,6 +388,7 @@ const ContactPage = () => {
         </div>
     );
 };
+
 
 const Footer = () => (
     <footer className="app-footer">
