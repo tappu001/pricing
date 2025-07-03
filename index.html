@@ -8,21 +8,217 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
-  }
-}
-</script>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel" src="index.tsx"></script>
+    <div id="root">
+        <header class="app-header">
+            <div class="container">
+                <a href="index.html" class="logo">Tapasvi D.</a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="page">
+                <section class="home-hero">
+                    <div class="container">
+                        <h1>Tapasvi Dudhrejiya</h1>
+                        <h2>Technical Implementation Engineer</h2>
+                        <div class="contact-info">
+                            <span class="contact-info-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                                Ahmedabad, Gujarat
+                            </span>
+                            <a href="mailto:dudhrejiyatapasvi@gmail.com" class="contact-info-item">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                                dudhrejiyatapasvi@gmail.com
+                            </a>
+                            <a href="tel:+918530661583" class="contact-info-item">
+                                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.75-.25 1.02l-2.2 2.2z"></path></svg>
+                                +91 85306 61583
+                            </a>
+                            <a href="https://www.linkedin.com/in/tapasvi-dudhrejiya/" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-11.5 7v7h3v-7h-3zM9 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.5 3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V17h3v-4.5c0-3-2.5-5.5-5.5-5.5S13.5 9.5 13.5 12.5v1h-3v-1z"></path></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="home-section">
+                    <div class="container">
+                         <div class="cv-card">
+                            <h3>Professional Summary</h3>
+                            <p>Results-driven Technical Implementation Engineer with 3 years of experience in GA4, GTM, server-side tagging, and data-driven marketing tech. Adept at implementing scalable tracking solutions across web and mobile platforms, building Looker dashboards, and integrating ad platforms. Known for ensuring data integrity, troubleshooting complex tag structures, and maximizing campaign ROI through accurate measurement framework.</p>
+                         </div>
+                    </div>
+                </section>
+
+                <section class="home-section">
+                    <div class="container">
+                        <div class="cv-card">
+                            <h3>Experience</h3>
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <span class="item-title">Technical Analyst - Dataslush</span>
+                                    <span class="item-meta">Jul 2022 – Present</span>
+                                </div>
+                                <ul class="item-duties">
+                                    <li>Led GA4, GTM, and server-side tagging implementations across clients from D2C, healthcare, education, and manufacturing domains.</li>
+                                    <li>Built data layers and validated events using Chrome DevTools, Tag Assistant, and Omnibug.</li>
+                                    <li>Created Looker Studio dashboards for campaign and funnel analytics; integrated marketing tags (Meta Pixel, Google Ads, VWO).</li>
+                                    <li>Improved tagging governance via audits and implemented documentation for stakeholders.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="home-section">
+                    <div class="container">
+                        <div class="cv-card">
+                            <h3>Project Highlights</h3>
+                            <div class="home-grid">
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">Digital Marketing Agency</span>
+                                         <span class="item-meta">Ongoing</span>
+                                    </div>
+                                    <p>Implemented GA4, GTM, and server-side tagging; reduced ad blocker data loss by 18%, improved LinkedIn ROAS.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">Global Manufacturer</span>
+                                         <span class="item-meta">2023</span>
+                                    </div>
+                                    <p>Unified subdomain tracking via modular GTM; improved funnel visibility and session continuity.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">Healthcare Provider</span>
+                                         <span class="item-meta">2022-23</span>
+                                    </div>
+                                    <p>Led site-wide tracking and dashboarding; increased lead attribution accuracy by 30%.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">Consumer Electronics (Cooling Appliances)</span>
+                                         <span class="item-meta">2024-25</span>
+                                    </div>
+                                    <p>Setup GA4 Enhanced Ecommerce and unified dashboards; supported 17% uplift in attribution accuracy.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">University K12 Learning Platform</span>
+                                         <span class="item-meta">2023</span>
+                                    </div>
+                                    <p>Built GA4 Advance event tracking and Looker dashboards for a K12 learning tool; led to a 15% boost in session time.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">EMI Gateway Provider</span>
+                                         <span class="item-meta">2025-Present</span>
+                                    </div>
+                                    <p>Deployed GA4 Enhanced Ecommerce across gateway flow; improved drop-off recovery by 8%.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">Marketing Technology</span>
+                                         <span class="item-meta">2023-24</span>
+                                    </div>
+                                    <p>Integrated Snapchat CAPI and GA4; improved ad attribution by 22%.</p>
+                                </div>
+                                <div class="project-item">
+                                    <div class="item-header">
+                                         <span class="item-title">Learning Cloud</span>
+                                         <span class="item-meta">2025-Present</span>
+                                    </div>
+                                    <p>Enabled student interaction tracking; led to a 20% rise in content completion rates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="home-section">
+                    <div class="container">
+                        <div class="home-grid">
+                            <div class="cv-card">
+                                <h3>Skills & Tools</h3>
+                                <div class="skills-container">
+                                    <div class="skill-category">
+                                        <h4>Tracking & Analytics</h4>
+                                        <ul>
+                                            <li>GA4/GTM (Web + Server)</li>
+                                            <li>Datalayer</li>
+                                            <li>BigQuery</li>
+                                            <li>Meta Pixel</li>
+                                            <li>VWO</li>
+                                            <li>Looker Studio</li>
+                                            <li>Cookie Consent</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-category">
+                                        <h4>Technologies</h4>
+                                        <ul>
+                                            <li>JavaScript</li>
+                                            <li>Google Apps Script</li>
+                                            <li>SQL</li>
+                                            <li>Python</li>
+                                            <li>CSS</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-category">
+                                        <h4>Soft Skills</h4>
+                                        <ul>
+                                            <li>Problem Solving</li>
+                                            <li>Data Visualization</li>
+                                            <li>Critical Thinking</li>
+                                            <li>Documentation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cv-card">
+                                <h3>Education & Certifications</h3>
+                                <p><strong>B.Sc. Mathematics</strong>, Kamani Science College, Amreli (2018–2022)</p>
+                                <br>
+                                <h4>Certifications</h4>
+                                <ul>
+                                   <li>Google Analytics Individual Qualification (GAIQ)</li>
+                                   <li>BigQuery Certification – Simo Ahava</li>
+                                </ul>
+                                <br>
+                                <h4>Achievements</h4>
+                                <ul>
+                                   <li>Employee of the Quarter - Dataslush</li>
+                                   <li>Winner, Hackathon 2024 - Developed automated content generator using OpenAI & Apps Script</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="container">
+                <div class="footer-socials">
+                     <a href="mailto:dudhrejiyatapasvi@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg></a>
+                     <a href="https://www.linkedin.com/in/tapasvi-dudhrejiya/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-11.5 7v7h3v-7h-3zM9 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.5 3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V17h3v-4.5c0-3-2.5-5.5-5.5-5.5S13.5 9.5 13.5 12.5v1h-3v-1z"></path></svg></a>
+                </div>
+                <p>© 2024 Tapasvi Dudhrejiya. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
