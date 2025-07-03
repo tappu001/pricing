@@ -306,6 +306,7 @@ const PricingPage = () => {
     );
 }
 
+// === UPDATED COMPONENT START ===
 const ContactPage = () => {
     // IMPORTANT: Replace this with your actual Google Apps Script Web App URL
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyWi-IYyQgZmD1RfjBNu98reWQu40B2I9C7pMff6FxBpAfw-RclRPDt1nNp8xjpSPX/exec';
@@ -315,6 +316,10 @@ const ContactPage = () => {
         status: null, // 'success', 'error'
         message: ''
     });
+
+    const handleReset = () => {
+        setSubmissionStatus({ submitting: false, status: null, message: '' });
+    };
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -346,32 +351,43 @@ const ContactPage = () => {
                 <h2 className="section-title">Contact Me</h2>
                 <div className="contact-container">
                     <div className="contact-form">
-                        <h3>Send a Message</h3>
-                        <p style={{marginBottom: '15px', color: 'var(--text-light)', fontSize: '0.9rem'}}>
-                            Your message will be sent to my inbox and saved to a Google Sheet using Apps Script.
-                        </p>
-                        <form onSubmit={handleSubmit}>
-                            <div className="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required disabled={submissionStatus.submitting} />
+                        {submissionStatus.status === 'success' ? (
+                            <div className="thank-you-message">
+                                <CheckIcon />
+                                <h3>Thank You!</h3>
+                                <p>{submissionStatus.message}</p>
+                                <button onClick={handleReset} className="cta-btn">Send Another Message</button>
                             </div>
-                            <div className="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required disabled={submissionStatus.submitting} />
-                            </div>
-                            <div className="form-group">
-                                <input type="text" name="subject" placeholder="Subject" required disabled={submissionStatus.submitting} />
-                            </div>
-                            <div className="form-group">
-                                <textarea name="message" placeholder="Your Message" required disabled={submissionStatus.submitting}></textarea>
-                            </div>
-                            <button type="submit" className="cta-btn" disabled={submissionStatus.submitting}>
-                                {submissionStatus.submitting ? 'Sending...' : 'Send Message'}
-                            </button>
-                            {submissionStatus.status && (
-                                <p className={`form-status ${submissionStatus.status}`}>
-                                    {submissionStatus.message}
+                        ) : (
+                            <>
+                                <h3>Send a Message</h3>
+                                <p style={{marginBottom: '15px', color: 'var(--text-light)', fontSize: '0.9rem'}}>
+                                    Your message will be sent to my inbox and saved to a Google Sheet using Apps Script.
                                 </p>
-                            )}
-                        </form>
+                                <form onSubmit={handleSubmit}>
+                                    <div className="form-group">
+                                        <input type="text" name="name" placeholder="Your Name" required disabled={submissionStatus.submitting} />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="email" name="email" placeholder="Your Email" required disabled={submissionStatus.submitting} />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" name="subject" placeholder="Subject" required disabled={submissionStatus.submitting} />
+                                    </div>
+                                    <div className="form-group">
+                                        <textarea name="message" placeholder="Your Message" required disabled={submissionStatus.submitting}></textarea>
+                                    </div>
+                                    <button type="submit" className="cta-btn" disabled={submissionStatus.submitting}>
+                                        {submissionStatus.submitting ? 'Sending...' : 'Send Message'}
+                                    </button>
+                                    {submissionStatus.status === 'error' && (
+                                        <p className="form-status error">
+                                            {submissionStatus.message}
+                                        </p>
+                                    )}
+                                </form>
+                            </>
+                        )}
                     </div>
                     <div className="contact-details">
                         <h3>Contact Information</h3>
@@ -388,6 +404,7 @@ const ContactPage = () => {
         </div>
     );
 };
+// === UPDATED COMPONENT END ===
 
 
 const Footer = () => (
@@ -397,7 +414,7 @@ const Footer = () => (
                  <a href={`mailto:${cvData.contact.email}`} aria-label="Email"><EmailIcon /></a>
                  <a href={cvData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedInIcon /></a>
             </div>
-            <p>&copy; {new Date().getFullYear()} Tapasvi Dudhrejiya. All Rights Reserved.</p>
+            <p>© {new Date().getFullYear()} Tapasvi Dudhrejiya. All Rights Reserved.</p>
         </div>
     </footer>
 );
@@ -447,3 +464,56 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+
+/*
+    === CSS TO ADD TO index.css ===
+
+    Add the following styles to the end of your index.css file
+    to style the new "Thank You" page and form status messages.
+
+    .form-status {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .form-status.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .form-status.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .thank-you-message {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .thank-you-message svg {
+        width: 60px;
+        height: 60px;
+        fill: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .thank-you-message h3 {
+        margin-bottom: 10px;
+    }
+
+    .thank-you-message p {
+        color: var(--text-light);
+        margin-bottom: 25px;
+    }
+
+*/
