@@ -306,13 +306,13 @@ const PricingPage = () => {
     );
 }
 
-const ContactPage = () => {
+const ContactPage = ({ onSuccess }) => {
     // IMPORTANT: Replace this with your actual Google Apps Script Web App URL
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyWi-IYyQgZmD1RfjBNu98reWQu40B2I9C7pMff6FxBpAfw-RclRPDt1nNp8xjpSPX/exec';
     
     const [submissionStatus, setSubmissionStatus] = React.useState({
         submitting: false,
-        status: null, // 'success', 'error'
+        status: null, // 'error'
         message: ''
     });
     
@@ -329,8 +329,8 @@ const ContactPage = () => {
         .then(response => response.json())
         .then(data => {
             if (data.result === 'success') {
-                setSubmissionStatus({ submitting: false, status: 'success', message: 'Thank you! Your message has been sent.' });
                 form.reset();
+                onSuccess();
             } else {
                 throw new Error(data.error || 'An unknown error occurred.');
             }
@@ -366,7 +366,7 @@ const ContactPage = () => {
                             <button type="submit" className="cta-btn" disabled={submissionStatus.submitting}>
                                 {submissionStatus.submitting ? 'Sending...' : 'Send Message'}
                             </button>
-                            {submissionStatus.status && (
+                            {submissionStatus.status === 'error' && (
                                 <p className={`form-status ${submissionStatus.status}`}>
                                     {submissionStatus.message}
                                 </p>
@@ -389,6 +389,20 @@ const ContactPage = () => {
     );
 };
 
+const ThankYouPage = ({ onReturnHome }) => (
+    <div className="page thank-you-page">
+        <div className="thank-you-content">
+            <svg className="thank-you-icon" viewBox="0 0 52 52">
+                <circle cx="26" cy="26" r="25"/>
+                <path d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <h2>Thank You!</h2>
+            <p>Your message has been received. I will get back to you shortly.</p>
+            <button onClick={onReturnHome} className="cta-btn">Back to Home</button>
+        </div>
+    </div>
+);
+
 
 const Footer = () => (
     <footer className="app-footer">
@@ -405,9 +419,11 @@ const Footer = () => (
 
 const App = () => {
     const [activePage, setActivePage] = React.useState('home');
+    const [isThankYouVisible, setIsThankYouVisible] = React.useState(false);
 
     React.useEffect(() => {
         const handleHashChange = () => {
+            if (isThankYouVisible) return;
             const hash = window.location.hash.replace('#', '') || 'home';
             setActivePage(hash);
         };
@@ -416,22 +432,39 @@ const App = () => {
         handleHashChange(); // Initial load
 
         return () => window.removeEventListener('hashchange', handleHashChange);
-    }, []);
+    }, [isThankYouVisible]);
+
+    const handleFormSuccess = () => {
+        setIsThankYouVisible(true);
+        window.scrollTo(0, 0);
+    };
+
+    const handleReturnHome = () => {
+        setIsThankYouVisible(false);
+        handleNavClick('home');
+    };
+    
+    const handleNavClick = (page) => {
+        if (isThankYouVisible) {
+            setIsThankYouVisible(false);
+        }
+        setActivePage(page);
+        window.location.hash = page;
+    }
 
     const renderPage = () => {
         switch(activePage) {
             case 'services': return <ServicesPage />;
             case 'pricing': return <PricingPage />;
-            case 'contact': return <ContactPage />;
+            case 'contact': return <ContactPage onSuccess={handleFormSuccess} />;
             case 'home':
             default:
                 return <HomePage />;
         }
     };
     
-    const handleNavClick = (page) => {
-        setActivePage(page);
-        window.location.hash = page;
+    if (isThankYouVisible) {
+        return <ThankYouPage onReturnHome={handleReturnHome} />;
     }
 
     return (
