@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Tapasvi Dudhrejiya</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add a little style for form status messages */
+        .form-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .form-status.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+        .form-status.error {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <header class="app-header">
+            <div class="container">
+                <a href="index.html" class="logo">Tapasvi D.</a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="page">
+                <div class="container">
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="contact-container">
+                        <div class="contact-form">
+                            <h3>Send a Message</h3>
+                            <p style="margin-bottom: 15px; color: var(--text-light); font-size: 0.9rem;">
+                                Your message will be sent to my inbox and saved to a Google Sheet using Apps Script.
+                            </p>
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="cta-btn" id="submit-btn">Send Message</button>
+                                <div id="form-status-container"></div>
+                            </form>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Contact Information</h3>
+                            <p>Feel free to reach out via email or connect with me on LinkedIn. I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision.</p>
+                            <div class="contact-info" style="justify-content: flex-start; flex-direction: column; align-items: flex-start;">
+                                <a href="mailto:dudhrejiyatapasvi@gmail.com" class="contact-info-item">
+                                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                                    dudhrejiyatapasvi@gmail.com
+                                </a>
+                                <a href="tel:+918530661583" class="contact-info-item">
+                                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.75-.25 1.02l-2.2 2.2z"></path></svg>
+                                    +91 85306 61583
+                                </a>
+                                <a href="https://www.linkedin.com/in/tapasvi-dudhrejiya/" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-11.5 7v7h3v-7h-3zM9 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.5 3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V17h3v-4.5c0-3-2.5-5.5-5.5-5.5S13.5 9.5 13.5 12.5v1h-3v-1z"></path></svg>
+                                    linkedin.com/in/tapasvi-dudhrejiya
+                                </a>
+                                <span class="contact-info-item">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                                    Ahmedabad, Gujarat
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="container">
+                <div class="footer-socials">
+                     <a href="mailto:dudhrejiyatapasvi@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg></a>
+                     <a href="https://www.linkedin.com/in/tapasvi-dudhrejiya/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-11.5 7v7h3v-7h-3zM9 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.5 3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V17h3v-4.5c0-3-2.5-5.5-5.5-5.5S13.5 9.5 13.5 12.5v1h-3v-1z"></path></svg></a>
+                </div>
+                <p>&copy; 2024 Tapasvi Dudhrejiya. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
