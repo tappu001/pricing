@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Tapasvi Dudhrejiya</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="root">
+        <header class="app-header">
+            <div class="container">
+                <a href="index.html" class="logo">Tapasvi D.</a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html" class="active">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="page" id="pricing-page">
+                <div class="container">
+                    <h2 class="section-title">Pricing</h2>
+                    <div class="pricing-toggle">
+                        <div class="toggle-group">
+                            <label>Currency:</label>
+                            <button id="btn-inr" class="toggle-btn active">INR</button>
+                            <button id="btn-usd" class="toggle-btn">USD</button>
+                        </div>
+                        <div class="toggle-group" style="margin-left: 20px;">
+                             <label>View:</label>
+                            <button id="btn-packages" class="toggle-btn active">Packages</button>
+                            <button id="btn-hourly" class="toggle-btn">Hourly</button>
+                        </div>
+                    </div>
+    
+                    <!-- Packages View -->
+                    <div id="packages-view">
+                        <div class="pricing-grid">
+                            <!-- INR Packages -->
+                            <div class="pricing-card" data-currency="inr">
+                                <h3>Basic</h3>
+                                <p class="price">₹25,000</p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>GA4/GTM Audit</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Basic Tag Implementation</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>1 Looker Studio Dashboard</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Email Support</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Get Started</a>
+                            </div>
+                            <div class="pricing-card popular" data-currency="inr">
+                                <h3>Pro</h3>
+                                <p class="price">₹60,000</p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Everything in Basic</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Server-Side Tagging Setup</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Enhanced Ecommerce Tracking</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>3 Custom Dashboards</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Priority Support</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Get Started</a>
+                            </div>
+                            <div class="pricing-card" data-currency="inr">
+                                <h3>Premium</h3>
+                                <p class="price">₹1,25,000<span>/month</span></p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Everything in Pro</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Monthly Retainer</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>A/B Testing Setup (VWO)</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Custom Scripting</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Dedicated Consultation</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Get Started</a>
+                            </div>
+                            <!-- USD Packages -->
+                            <div class="pricing-card" data-currency="usd" style="display: none;">
+                                <h3>Basic</h3>
+                                <p class="price">$500</p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>GA4/GTM Audit</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Basic Tag Implementation</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>1 Looker Studio Dashboard</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Email Support</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Get Started</a>
+                            </div>
+                            <div class="pricing-card popular" data-currency="usd" style="display: none;">
+                                <h3>Pro</h3>
+                                <p class="price">$1,200</p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Everything in Basic</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Server-Side Tagging Setup</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Enhanced Ecommerce Tracking</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>3 Custom Dashboards</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Priority Support</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Get Started</a>
+                            </div>
+                            <div class="pricing-card" data-currency="usd" style="display: none;">
+                                <h3>Premium</h3>
+                                <p class="price">$2,500<span>/month</span></p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Everything in Pro</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Monthly Retainer</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>A/B Testing Setup (VWO)</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Custom Scripting</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Dedicated Consultation</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Hourly View -->
+                    <div id="hourly-view" style="display: none;">
+                        <div class="pricing-grid">
+                            <div class="pricing-card hourly-rate-card" data-currency="inr">
+                                <h3>Hourly Rate</h3>
+                                <p class="price">₹2,400<span>/hour</span></p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Consultation & Strategy</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Implementation & Development</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Troubleshooting & Support</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Flexible engagement</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Book a Session</a>
+                            </div>
+                            <div class="pricing-card hourly-rate-card" data-currency="usd" style="display: none;">
+                                <h3>Hourly Rate</h3>
+                                <p class="price">$60<span>/hour</span></p>
+                                <ul class="pricing-features">
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Consultation & Strategy</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Implementation & Development</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Troubleshooting & Support</li>
+                                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>Flexible engagement</li>
+                                </ul>
+                                <a href="contact.html" class="cta-btn">Book a Session</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                     <p class="pricing-disclaimer">
+                        Prices are discounted by 40% for initial projects. Custom packages are available upon request.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="container">
+                <div class="footer-socials">
+                     <a href="mailto:dudhrejiyatapasvi@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg></a>
+                     <a href="https://www.linkedin.com/in/tapasvi-dudhrejiya/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-11.5 7v7h3v-7h-3zM9 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.5 3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V17h3v-4.5c0-3-2.5-5.5-5.5-5.5S13.5 9.5 13.5 12.5v1h-3v-1z"></path></svg></a>
+                </div>
+                <p>&copy; 2024 Tapasvi Dudhrejiya. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
